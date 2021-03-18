@@ -5,3 +5,7 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+:placeholder-shown{
+    background-color: rgba(29, 73, 73, 0.116);
+}
