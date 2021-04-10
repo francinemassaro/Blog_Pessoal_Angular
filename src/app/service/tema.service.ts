@@ -21,8 +21,22 @@ export class TemaService {
     return this.http.get<Tema[]>('http://localhost:8080/tema', this.token)
   }
 
+
   postTema(tema: Tema): Observable<Tema>{
     return this.http.post<Tema>('http://localhost:8080/tema', tema, this.token)
+  }
+
+  putTema(tema: Tema): Observable<Tema>{
+    return this.http.put<Tema>('http://localhost:8080/tema', tema, this.token)
+  }
+
+  //Como o delete pede um parâmetro id precisamos de outra maneira pra receber. Abre crase ao inves de aspas simples, coloca o endereço normal e o parâmetro é ${PARAMETRO}
+  deleteTema(id: number){
+    return this.http.delete(`http://localhost:8080/tema/${id}`, this.token)
+  }
+
+  getByIdTema(id: number): Observable<Tema>{
+    return this.http.get<Tema>(`http://localhost:8080/tema/${id}`, this.token)
   }
 
 }
