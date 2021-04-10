@@ -2,7 +2,6 @@ import { Tema } from "./tema"
 import { User } from "./user"
 
 
-
 export class Postagem{
     
     public id: number
