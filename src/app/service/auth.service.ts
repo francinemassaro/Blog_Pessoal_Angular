@@ -20,6 +20,10 @@ export class AuthService {
     return this.http.post<User>('http://localhost:8080/usuarios/cadastrar', user)
   }
 
+  getByIdUser(id: number): Observable<User>{
+    return this.http.get<User>(`http://localhost:8080/usuarios/${id}`)
+  }
+
   //Pra saber se o token está preenchido, ou seja, quando clica em entrar
   logado(){
       let ok: boolean = false
